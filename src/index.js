@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 const Form = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState(''); 
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
     // const username = event.target.username.value;
@@ -30,10 +30,12 @@ const Form = () => {
           value={username}
           onChange={handleChange}
         />
-        <label htmlFor='password'>Password:</label>
-        <input 
-        type='password' name='password' value={password} 
-        onChange={(e) => setPassword(e.target.value)} 
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Submit:</button>
       </form>
