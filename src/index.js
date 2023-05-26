@@ -1,29 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 
 const Form = () => {
+  const [username, setUsername] = useState("");
+
   const handleSubmit = (event) => {
-    const username = event.target.username.value
-    console.log(username)
+    // const username = event.target.username.value;
+    console.log(username);
     event.preventDefault();
-  }
+    setUsername("");
+  };
+
+  const handleChange = (event) => {
+    setUsername(event.target.value);
+    // console.log(setUsername);
+  };
 
   return (
-    <div id='container'>
-      <div id='navbar'>
-        Form.js
-      </div>
+    <div id="container">
+      <div id="navbar">Form.js</div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='username'>Username:</label>
-        <input type='text' name='username' />
-        <button type='submit'>Submit:</button>
+        <label htmlFor="username">Username:</label>
+        <input
+          type="text"
+          name="username"
+          value={username}
+          onChange={handleChange}
+        />
+        <button type="submit">Submit:</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-
-ReactDOM.render(
-  <Form />,
-  document.getElementById('app')
-)
+ReactDOM.render(<Form />, document.getElementById("app"));
